@@ -1,5 +1,7 @@
 package com.luanegra.nicotinecalculator.ui.nicshot
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,19 +32,35 @@ class NicShotFragment : Fragment() {
         val btn_save: Button = root!!.findViewById(R.id.btn_save)
         result_layout.isEnabled = false
         btn_calculate.setOnClickListener {
-            if (!txt_desiredstreght.text!!.isEmpty()){
-                if (!txt_nicotinestreght.text!!.isEmpty()){
-                    if (!txt_totalamount.text!!.isEmpty()){
+            if (!txt_desiredstreght.text.isNullOrEmpty()){
+                if (!txt_nicotinestreght.text.isNullOrEmpty()){
+                    if (!txt_totalamount.text.isNullOrEmpty()){
                         val result: Float = calculateTotalAmount(txt_desiredstreght.text.toString().toFloat(), txt_nicotinestreght.text.toString().toFloat(), txt_totalamount.text.toString().toFloat())
                         txt_result.setText("${txt_totalamount.text.toString().toInt().minus(result)} of juice (in ml) + ${result} Nicotine (in ml)")
                     }else{
-                        FancyToast.makeText(requireContext(), "Total Amount is empty..." , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
+                        FancyToast.makeText(root!!.context, getString(R.string.totalamountisempty) , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
                     }
                 }else{
-                    FancyToast.makeText(requireContext(), "Concentrated Nicotine Strength is empty..." , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
+                    FancyToast.makeText(root!!.context, getString(R.string.concentratednicotineisempty) , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
                 }
             }else{
-                FancyToast.makeText(requireContext(), "Desired Strength is empty..." , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
+                FancyToast.makeText(root!!.context, getString(R.string.desirestreghtisempty) , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
+            }
+        }
+
+        btn_save.setOnClickListener {
+            if (!txt_desiredstreght.text.isNullOrEmpty()){
+                if (!txt_nicotinestreght.text.isNullOrEmpty()){
+                    if (!txt_totalamount.text.isNullOrEmpty()){
+                        saveRecipe(txt_desiredstreght.text.toString().toFloat(), txt_nicotinestreght.text.toString().toFloat(), txt_totalamount.text.toString().toFloat())
+                    }else{
+                        FancyToast.makeText(root!!.context, getString(R.string.totalamountisempty) , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
+                    }
+                }else{
+                    FancyToast.makeText(root!!.context, getString(R.string.concentratednicotineisempty) , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
+                }
+            }else{
+                FancyToast.makeText(root!!.context, getString(R.string.desirestreghtisempty) , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
             }
         }
 
@@ -52,5 +70,16 @@ class NicShotFragment : Fragment() {
     fun calculateTotalAmount(txt_desiredstreght: Float, txt_nicotinestreght: Float, txt_totalamount: Float): Float{
         var resultNic: Float = (txt_desiredstreght / txt_nicotinestreght) * txt_totalamount
         return resultNic
+    }
+
+    fun saveRecipe(txt_desiredstreght: Float, txt_nicotinestreght: Float, txt_totalamount: Float){
+        val sharedPreferences: SharedPreferences = root!!.context.getSharedPreferences("NicotineCalculator", Context.MODE_PRIVATE)
+        val editor: SharedPreferences.Editor =  sharedPreferences.edit()
+        editor.putString("", "${resources.getString(R.string.desired_strength)
+        } : $txt_desiredstreght; ${resources.getString(R.string.concentrated_nicotine_strength)
+        } : $txt_nicotinestreght; ${resources.getString(R.string.amount_of_e_liquid_with_0_nicotine)} : $txt_totalamount; ${resources.getString(R.string.result)
+        } : ${calculateTotalAmount(txt_desiredstreght, txt_nicotinestreght, txt_totalamount)}")
+        editor.apply()
+        editor.commit()
     }
 }

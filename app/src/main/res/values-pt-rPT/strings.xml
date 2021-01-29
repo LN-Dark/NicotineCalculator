@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nicotine Calculator</string>
+    <string name="nicshot">NicShot</string>
+    <string name="recipes">Receitas</string>
+    <string name="about">Sobre</string>
+    <string name="save">Guardar</string>
+    <string name="result">Resultado</string>
+    <string name="calculate">Calcular</string>
+    <string name="amount_of_e_liquid_with_0_nicotine">Quantidade de E-líquido (em ml) com nicotina (em ml) que deseja preparar</string>
+    <string name="concentrated_nicotine_strength">Força de nicotina concentrada (em mg)</string>
+    <string name="desired_strength">Força desejada (em mg)</string>
+    <string name="if_you_like_my_work_please_make_a_donation_in_paypal">Se gostas do meu trabalho, faz uma doação no paypal</string>
+    <string name="simple_calculate_your_desired_strength_of_nicotine_for_your_vapor_e_liquid">Calcula a Intensidade de nicotina desejada para o teu E-líquido de vapor</string>
+    <string name="all_my_projects_on_github">Todos os meus projetos no GitHub</string>
+    <string name="totalamountisempty">Conteudo total está vazio…</string>
+    <string name="concentratednicotineisempty">Quantidade concentrada de nicotina está vazio…</string>
+    <string name="desirestreghtisempty">Força desejada está vazia…</string>
+</resources>

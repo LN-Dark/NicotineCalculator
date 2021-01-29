@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">Nicotine Calculator</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
     <string name="nicshot">NicShot</string>
     <string name="recipes">Recipes</string>
     <string name="about">About</string>
@@ -15,4 +12,7 @@
     <string name="if_you_like_my_work_please_make_a_donation_in_paypal">If you like my work please make a donation in paypal</string>
     <string name="simple_calculate_your_desired_strength_of_nicotine_for_your_vapor_e_liquid">Simple calculate your desired Strength of nicotine for your vapor E-liquid</string>
     <string name="all_my_projects_on_github">All my projects on GitHub</string>
+    <string name="totalamountisempty">Total Amount is empty…</string>
+    <string name="concentratednicotineisempty">Concentrated Nicotine Strength is empty…</string>
+    <string name="desirestreghtisempty">Desired Strength is empty…</string>
 </resources>
