@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Nicotine Calculator</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="nicshot">NicShot</string>
+    <string name="recipes">Recipes</string>
+    <string name="about">About</string>
+    <string name="save">Save</string>
+    <string name="result">Result</string>
+    <string name="calculate">Calculate</string>
+    <string name="amount_of_e_liquid_with_0_nicotine">Amount of E-liquid (in ml) with Nicotine (in ml) you want to make</string>
+    <string name="concentrated_nicotine_strength">Concentrated Nicotine Strength (in mg)</string>
+    <string name="desired_strength">Desired Strength (in mg)</string>
+</resources>
