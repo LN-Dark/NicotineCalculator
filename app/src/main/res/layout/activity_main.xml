@@ -27,7 +27,6 @@
         android:background="@color/colorPrimaryVariant"
         app:elevation="2dp"
         app:itemIconSize="24dp"
-        app:itemIconTint="@color/selector_nav_item"
         app:itemTextColor="@color/selector_nav_item"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

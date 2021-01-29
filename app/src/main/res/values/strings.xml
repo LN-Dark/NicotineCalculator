@@ -12,4 +12,7 @@
     <string name="amount_of_e_liquid_with_0_nicotine">Amount of E-liquid (in ml) with Nicotine (in ml) you want to make</string>
     <string name="concentrated_nicotine_strength">Concentrated Nicotine Strength (in mg)</string>
     <string name="desired_strength">Desired Strength (in mg)</string>
+    <string name="if_you_like_my_work_please_make_a_donation_in_paypal">If you like my work please make a donation in paypal</string>
+    <string name="simple_calculate_your_desired_strength_of_nicotine_for_your_vapor_e_liquid">Simple calculate your desired Strength of nicotine for your vapor E-liquid</string>
+    <string name="all_my_projects_on_github">All my projects on GitHub</string>
 </resources>

@@ -35,7 +35,6 @@ class NicShotFragment : Fragment() {
                     if (!txt_totalamount.text!!.isEmpty()){
                         val result: Float = calculateTotalAmount(txt_desiredstreght.text.toString().toFloat(), txt_nicotinestreght.text.toString().toFloat(), txt_totalamount.text.toString().toFloat())
                         txt_result.setText("${txt_totalamount.text.toString().toInt().minus(result)} of juice (in ml) + ${result} Nicotine (in ml)")
-
                     }else{
                         FancyToast.makeText(requireContext(), "Total Amount is empty..." , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
                     }

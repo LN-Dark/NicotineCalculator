@@ -16,7 +16,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        getSupportActionBar()!!.setHomeAsUpIndicator(R.mipmap.ic_launcher)
+        getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
         val bottomNav : BottomNavigationView = findViewById(R.id.bottomNav)
+        bottomNav.setItemIconTintList(null)
         bottomNav.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         if (savedInstanceState == null) {
             val fragment = NicShotFragment()
