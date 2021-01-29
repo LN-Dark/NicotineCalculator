@@ -7,11 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.luanegra.nicotinecalculator.R
-import com.shashank.sony.fancytoastlib.FancyToast
+import www.sanju.motiontoast.MotionToast
 
 class NicShotFragment : Fragment() {
 
@@ -38,13 +39,31 @@ class NicShotFragment : Fragment() {
                         val result: Float = calculateTotalAmount(txt_desiredstreght.text.toString().toFloat(), txt_nicotinestreght.text.toString().toFloat(), txt_totalamount.text.toString().toFloat())
                         txt_result.setText("${txt_totalamount.text.toString().toInt().minus(result)} of juice (in ml) + ${result} Nicotine (in ml)")
                     }else{
-                        FancyToast.makeText(context, getString(R.string.totalamountisempty) , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
+                        MotionToast.darkToast(requireActivity(),
+                                getString(R.string.warning),
+                                getString(R.string.totalamountisempty),
+                                MotionToast.TOAST_WARNING,
+                                MotionToast.GRAVITY_BOTTOM,
+                                MotionToast.LONG_DURATION,
+                                ResourcesCompat.getFont(root!!.context,R.font.helvetica_regular))
                     }
                 }else{
-                    FancyToast.makeText(context, getString(R.string.concentratednicotineisempty) , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
+                    MotionToast.darkToast(requireActivity(),
+                            getString(R.string.warning),
+                            getString(R.string.concentratednicotineisempty),
+                            MotionToast.TOAST_WARNING,
+                            MotionToast.GRAVITY_BOTTOM,
+                            MotionToast.LONG_DURATION,
+                            ResourcesCompat.getFont(root!!.context,R.font.helvetica_regular))
                 }
             }else{
-                FancyToast.makeText(context, getString(R.string.desirestreghtisempty) , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
+                MotionToast.darkToast(requireActivity(),
+                        getString(R.string.warning),
+                        getString(R.string.desirestreghtisempty),
+                        MotionToast.TOAST_WARNING,
+                        MotionToast.GRAVITY_BOTTOM,
+                        MotionToast.LONG_DURATION,
+                        ResourcesCompat.getFont(root!!.context,R.font.helvetica_regular))
             }
         }
 
@@ -54,13 +73,31 @@ class NicShotFragment : Fragment() {
                     if (!txt_totalamount.text.isNullOrEmpty()){
                         saveRecipe(txt_desiredstreght.text.toString().toFloat(), txt_nicotinestreght.text.toString().toFloat(), txt_totalamount.text.toString().toFloat())
                     }else{
-                        FancyToast.makeText(context, getString(R.string.totalamountisempty) , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
+                        MotionToast.darkToast(requireActivity(),
+                                getString(R.string.warning),
+                                getString(R.string.totalamountisempty),
+                                MotionToast.TOAST_WARNING,
+                                MotionToast.GRAVITY_BOTTOM,
+                                MotionToast.LONG_DURATION,
+                                ResourcesCompat.getFont(root!!.context,R.font.helvetica_regular))
                     }
                 }else{
-                    FancyToast.makeText(context, getString(R.string.concentratednicotineisempty) , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
+                    MotionToast.darkToast(requireActivity(),
+                            getString(R.string.warning),
+                            getString(R.string.concentratednicotineisempty),
+                            MotionToast.TOAST_WARNING,
+                            MotionToast.GRAVITY_BOTTOM,
+                            MotionToast.LONG_DURATION,
+                            ResourcesCompat.getFont(root!!.context,R.font.helvetica_regular))
                 }
             }else{
-                FancyToast.makeText(context, getString(R.string.desirestreghtisempty) , FancyToast.LENGTH_LONG,FancyToast.WARNING,true)
+                MotionToast.darkToast(requireActivity(),
+                        getString(R.string.warning),
+                        getString(R.string.desirestreghtisempty),
+                        MotionToast.TOAST_WARNING,
+                        MotionToast.GRAVITY_BOTTOM,
+                        MotionToast.LONG_DURATION,
+                        ResourcesCompat.getFont(root!!.context,R.font.helvetica_regular))
             }
         }
 
@@ -82,6 +119,12 @@ class NicShotFragment : Fragment() {
         } ${txt_totalamount.minus(calculateTotalAmount(txt_desiredstreght, txt_nicotinestreght, txt_totalamount))} ${resources.getString(R.string.ofeliquid)}")
         editor.apply()
         editor.commit()
-        FancyToast.makeText(context, getString(R.string.recipesaved) , FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true)
+        MotionToast.darkToast(requireActivity(),
+                getString(R.string.warning),
+                getString(R.string.recipesaved),
+                MotionToast.TOAST_WARNING,
+                MotionToast.GRAVITY_BOTTOM,
+                MotionToast.LONG_DURATION,
+                ResourcesCompat.getFont(root!!.context,R.font.helvetica_regular))
     }
 }
