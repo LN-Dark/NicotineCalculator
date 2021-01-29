@@ -15,4 +15,9 @@
     <string name="totalamountisempty">Total Amount is empty…</string>
     <string name="concentratednicotineisempty">Concentrated Nicotine Strength is empty…</string>
     <string name="desirestreghtisempty">Desired Strength is empty…</string>
+    <string name="deleterecipe">Delete Recipe</string>
+    <string name="cancel">Cancel</string>
+    <string name="ofnicotine">ml nicotine and </string>
+    <string name="ofeliquid">ml e-liquid</string>
+    <string name="recipesaved">Recipe saved!</string>
 </resources>

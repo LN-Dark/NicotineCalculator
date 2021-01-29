@@ -16,4 +16,9 @@
     <string name="totalamountisempty">Conteudo total está vazio…</string>
     <string name="concentratednicotineisempty">Quantidade concentrada de nicotina está vazio…</string>
     <string name="desirestreghtisempty">Força desejada está vazia…</string>
+    <string name="deleterecipe">Eliminar receita</string>
+    <string name="cancel">Cancelar</string>
+    <string name="ofnicotine">ml de nicotina e </string>
+    <string name="ofeliquid">ml de e-liquid</string>
+    <string name="recipesaved">Receita guardada!</string>
 </resources>
