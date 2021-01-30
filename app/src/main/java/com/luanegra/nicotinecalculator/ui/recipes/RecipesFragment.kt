@@ -42,7 +42,8 @@ class RecipesFragment : Fragment() {
         val sharedPreferences: SharedPreferences = root!!.context.getSharedPreferences("NicotineCalculator", Context.MODE_PRIVATE)
         val allEntries: Map<String, *> = sharedPreferences.all
         for ((key, value) in allEntries) {
-            val recipe = RecipeObject(value.toString(), key)
+            var lines = value.toString().lines()
+            val recipe = RecipeObject(key, lines[0], lines[1], lines[2], lines[3])
             if (!recipesList!!.contains(recipe)){
                 (recipesList as ArrayList).add(recipe)
                 recipesAdapter!!.notifyDataSetChanged()

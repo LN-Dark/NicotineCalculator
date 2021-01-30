@@ -1,11 +1,13 @@
 package com.luanegra.nicotinecalculator.ui.nicshot
 
+import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
@@ -37,7 +39,7 @@ class NicShotFragment : Fragment() {
                 if (!txt_nicotinestreght.text.isNullOrEmpty()){
                     if (!txt_totalamount.text.isNullOrEmpty()){
                         val result: Float = calculateTotalAmount(txt_desiredstreght.text.toString().toFloat(), txt_nicotinestreght.text.toString().toFloat(), txt_totalamount.text.toString().toFloat())
-                        txt_result.setText("${txt_totalamount.text.toString().toInt().minus(result)} of juice (in ml) + ${result} Nicotine (in ml)")
+                        txt_result.setText("${txt_totalamount.text.toString().toInt().minus(result)} ${getString(R.string.ofjuice)} ${result} ${getString(R.string.ofnicotine)}")
                     }else{
                         MotionToast.darkToast(requireActivity(),
                                 getString(R.string.warning),
@@ -71,7 +73,17 @@ class NicShotFragment : Fragment() {
             if (!txt_desiredstreght.text.isNullOrEmpty()){
                 if (!txt_nicotinestreght.text.isNullOrEmpty()){
                     if (!txt_totalamount.text.isNullOrEmpty()){
-                        saveRecipe(txt_desiredstreght.text.toString().toFloat(), txt_nicotinestreght.text.toString().toFloat(), txt_totalamount.text.toString().toFloat())
+                        if (!txt_result.text.isNullOrEmpty()){
+                            saveRecipe(txt_desiredstreght.text.toString().toFloat(), txt_nicotinestreght.text.toString().toFloat(), txt_totalamount.text.toString().toFloat(), txt_result.text.toString())
+                        }else{
+                            MotionToast.darkToast(requireActivity(),
+                                    getString(R.string.warning),
+                                    "You need to calculate the result first!",
+                                    MotionToast.TOAST_WARNING,
+                                    MotionToast.GRAVITY_BOTTOM,
+                                    MotionToast.LONG_DURATION,
+                                    ResourcesCompat.getFont(root!!.context,R.font.helvetica_regular))
+                        }
                     }else{
                         MotionToast.darkToast(requireActivity(),
                                 getString(R.string.warning),
@@ -106,25 +118,30 @@ class NicShotFragment : Fragment() {
 
     fun calculateTotalAmount(txt_desiredstreght: Float, txt_nicotinestreght: Float, txt_totalamount: Float): Float{
         var resultNic: Float = (txt_desiredstreght / txt_nicotinestreght) * txt_totalamount
+        hideKeyboard(root!!.rootView)
         return resultNic
     }
 
-    fun saveRecipe(txt_desiredstreght: Float, txt_nicotinestreght: Float, txt_totalamount: Float){
+    fun saveRecipe(txt_desiredstreght: Float, txt_nicotinestreght: Float, txt_totalamount: Float, txt_result: String){
         val sharedPreferences: SharedPreferences = root!!.context.getSharedPreferences("NicotineCalculator", Context.MODE_PRIVATE)
         val editor: SharedPreferences.Editor =  sharedPreferences.edit()
         editor.putString("$txt_totalamount$txt_nicotinestreght", "${resources.getString(R.string.desired_strength)
-        } : $txt_desiredstreght \n\n${resources.getString(R.string.concentrated_nicotine_strength)
-        } : $txt_nicotinestreght \n\n${resources.getString(R.string.amount_of_e_liquid_with_0_nicotine)} : $txt_totalamount \n\n\n${resources.getString(R.string.result)
-        } : ${calculateTotalAmount(txt_desiredstreght, txt_nicotinestreght, txt_totalamount)} ${resources.getString(R.string.ofnicotine)
-        } ${txt_totalamount.minus(calculateTotalAmount(txt_desiredstreght, txt_nicotinestreght, txt_totalamount))} ${resources.getString(R.string.ofeliquid)}")
+        } : $txt_desiredstreght \n${resources.getString(R.string.concentrated_nicotine_strength)
+        } : $txt_nicotinestreght \n${resources.getString(R.string.amount_of_e_liquid_with_0_nicotine)} : $txt_totalamount \n${resources.getString(R.string.result)
+        } : ${txt_result}")
         editor.apply()
         editor.commit()
         MotionToast.darkToast(requireActivity(),
-                getString(R.string.warning),
+                getString(R.string.SUCCESS),
                 getString(R.string.recipesaved),
-                MotionToast.TOAST_WARNING,
+                MotionToast.TOAST_SUCCESS,
                 MotionToast.GRAVITY_BOTTOM,
                 MotionToast.LONG_DURATION,
                 ResourcesCompat.getFont(root!!.context,R.font.helvetica_regular))
+    }
+
+    fun hideKeyboard(view: View) {
+        val inputMethodManager = root!!.context.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
 }

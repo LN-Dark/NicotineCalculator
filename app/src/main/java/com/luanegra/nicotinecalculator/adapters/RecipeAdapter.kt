@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.luanegra.nicotinecalculator.R
 import com.luanegra.nicotinecalculator.objects.RecipeObject
@@ -17,7 +18,11 @@ class RecipeAdapter(mContext: Context, mRecipeList: List<RecipeObject>) : Recycl
     private val mRecipeList: List<RecipeObject> = mRecipeList
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var recipe: TextView = itemView.findViewById(R.id.recipe)
+        var forcadesejada: TextView = itemView.findViewById(R.id.forcadesejada)
+        var nicotinaconcentrada: TextView = itemView.findViewById(R.id.nicotinaconcentrada)
+        var totalliquido: TextView = itemView.findViewById(R.id.totalliquido)
+        var resultado: TextView = itemView.findViewById(R.id.resultado)
+        var card_recipe: CardView = itemView.findViewById(R.id.card_recipe)
 
     }
 
@@ -34,8 +39,12 @@ class RecipeAdapter(mContext: Context, mRecipeList: List<RecipeObject>) : Recycl
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val recipe: RecipeObject = mRecipeList[position]
-        holder.recipe.text = recipe.getsavedrecipe()
-        holder.recipe.setOnClickListener {
+        holder.forcadesejada.text = recipe.getforcaDesejada()
+        holder.nicotinaconcentrada.text = recipe.getforcaConcentrada()
+        holder.totalliquido.text = recipe.gettotalLiquido()
+        holder.resultado.text = recipe.getresultado()
+
+        holder.card_recipe.setOnClickListener {
             val options = arrayOf<CharSequence>(
                     mContext.getString(R.string.deleterecipe),
                     mContext.getString(R.string.cancel)

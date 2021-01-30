@@ -9,6 +9,7 @@
         <item name="colorOnSecondary">@color/colorOnSecondary</item>
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <item name="android:itemTextAppearance">@style/myCustomMenuTextAppearance</item>
+        <item name="android:actionBarStyle">@style/Theme.NicotineCalculator.ActionBar</item>
     </style>
 
     <style name="Theme.NicotineCalculator.NoActionBar">
@@ -18,6 +19,10 @@
 
     <style name="myCustomMenuTextAppearance" parent="@android:style/TextAppearance.Widget.IconMenu.Item">
         <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Theme.NicotineCalculator.ActionBar" parent="ThemeOverlay.MaterialComponents.ActionBar" >
+        <item name="android:background">@color/colorAccent</item>
     </style>
 
     <style name="Theme.RSAChat.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

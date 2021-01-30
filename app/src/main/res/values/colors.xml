@@ -12,8 +12,10 @@
     <color name="colorGray">#4E4E4E</color>
     <color name="colorDarkGray">#3C3C3C</color>
 
-    <color name="colorOnline">#70F427</color>
-    <color name="colorOffline">#969795</color>
+    <color name="colorGreen">#70F427</color>
+    <color name="colorRed">#C52121</color>
+    <color name="colorBlue">#2196F3</color>
+    <color name="colorYellow">#FFC107</color>
 
     <color name="colorChatLeft">#2A2C2C</color>
     <color name="colorChatRight">#1E1D1B</color>

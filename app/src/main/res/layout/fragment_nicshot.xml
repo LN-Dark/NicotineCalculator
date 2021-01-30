@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:maxLines="1"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorYellow" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:maxLines="1"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorRed" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:maxLines="1"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorBlue" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,7 +126,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:maxLines="1"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorGreen" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

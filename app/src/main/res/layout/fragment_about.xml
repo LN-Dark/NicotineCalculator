@@ -32,7 +32,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="@string/if_you_like_my_work_please_make_a_donation_in_paypal"
                 android:textAlignment="center"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorYellow"
                 android:textSize="20sp" />
 
             <ImageView
@@ -74,7 +74,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="@string/all_my_projects_on_github"
                 android:textAlignment="center"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorBlue"
                 android:textSize="20sp" />
 
             <ImageView
@@ -112,7 +112,7 @@
             android:layout_marginEnd="8dp"
             android:text="@string/simple_calculate_your_desired_strength_of_nicotine_for_your_vapor_e_liquid"
             android:textAlignment="center"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/colorGreen"
             android:textSize="20sp" />
 
 

@@ -17,8 +17,10 @@
     <string name="desirestreghtisempty">Desired Strength is empty…</string>
     <string name="deleterecipe">Delete Recipe</string>
     <string name="cancel">Cancel</string>
-    <string name="ofnicotine">ml nicotine and </string>
+    <string name="ofnicotine">Nicotine (in ml)</string>
     <string name="ofeliquid">ml e-liquid</string>
     <string name="recipesaved">Recipe saved!</string>
     <string name="warning">Warning!</string>
+    <string name="ofjuice">of juice (in ml) +</string>
+    <string name="SUCCESS">Success!</string>
 </resources>

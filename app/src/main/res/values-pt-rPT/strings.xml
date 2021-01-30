@@ -18,8 +18,10 @@
     <string name="desirestreghtisempty">Força desejada está vazia…</string>
     <string name="deleterecipe">Eliminar receita</string>
     <string name="cancel">Cancelar</string>
-    <string name="ofnicotine">ml de nicotina e </string>
+    <string name="ofnicotine">de Nicotina (em ml)</string>
     <string name="ofeliquid">ml de e-liquid</string>
     <string name="recipesaved">Receita guardada!</string>
     <string name="warning">Aviso!</string>
+    <string name="ofjuice">de E-Liquid (em ml) +</string>
+    <string name="SUCCESS">Sucesso!</string>
 </resources>

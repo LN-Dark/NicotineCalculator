@@ -1,8 +1,14 @@
+import java.text.SimpleDateFormat
+
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
-
+static def buildTime() {
+    def df = new SimpleDateFormat("dd-MM-YY")
+    df.setTimeZone(TimeZone.getTimeZone("UTC"))
+    return df.format(new Date())
+}
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -12,7 +18,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        setProperty("archivesBaseName", "NicotineCalculator" + buildTime())
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
